@@ -1,8 +1,8 @@
 # linkage-compare
 
 Simulate synthetic record-linkage data and compare a logistic regression
-(GLM) baseline against a random forest classifier, including a statistical
-significance test between the two.
+(GLM) baseline against a random forest classifier in terms of a suite of
+model summary metrics (as well as a statistical hypothesis test).
 
 ## Installation
 
@@ -32,9 +32,9 @@ glm_metrics, rf_metrics, significance = compare_models(y, features, random_state
 print(glm_metrics, rf_metrics, significance)
 ```
 
-`significance` is a `McNemarResult` with `n01`, `n10`, and `p_value` —
-a small `p_value` means the two models' disagreements are lopsided enough
-that the performance difference is unlikely to be due to chance.
+`significance` is a `McNemarResult` with `n01`, `n10`, and `p_value`.As is standard,
+a small p-value indicates that the difference betwene the models in unlikely due to
+chance.
 
 ## Examples
 
@@ -58,8 +58,8 @@ examples/output/
 
 Re-running the script overwrites these files in place. With the default
 purely-random simulation both models score around 0.5 on every metric (as
-expected). Swap in real features/labels (or adjust `p_link`)
-to extend the comparison.
+expected). Swap in real features/labels (or adjust `p_link`) to strengthen
+the comparison.
 
 ## Project structure
 
