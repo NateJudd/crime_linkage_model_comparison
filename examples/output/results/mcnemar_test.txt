@@ -1,0 +1,7 @@
+McNemar's test: GLM vs RandomForest on the same test set
+------------------------------------------------------------
+n01 (GLM wrong, RF right): 2951
+n10 (GLM right, RF wrong): 2882
+p_value: 0.3733
+
+p >= 0.05: not enough evidence to say the two models perform differently on this test set.
