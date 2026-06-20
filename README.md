@@ -4,27 +4,6 @@ Simulate synthetic record-linkage data and compare a logistic regression
 (GLM) baseline against a random forest classifier, including a statistical
 significance test between the two.
 
-## What changed from the original version
-
-This started as a small script with a few bugs; this cleanup fixed:
-
-- **`simulate_features` crashed.** It called `np.random.binomial(size=(n, p))`
-  without the required `n` (trials) and `p` (probability) arguments.
-- **Shape mismatch between features and labels.** `simulate_linkages`
-  produced an `n x n` matrix while `simulate_features` produced an `n x p`
-  matrix — these can't be fit together. Pairwise linkage classification
-  needs one feature vector *per pair*, so `simulate_features` now returns
-  `(n * n) x p` rows, and a new `flatten_linkages` helper flattens the
-  linkage matrix to match.
-- **Models were evaluated on their own training data**, which especially
-  inflates the random forest's apparent performance. `compare_models` now
-  does a train/test split and scores on the held-out test set.
-- **No way to tell if the difference between models was real.** Added a
-  McNemar's test (`stats.py`) — the standard way to "A/B test" two
-  classifiers evaluated on the same test set — alongside the metrics.
-- Added type hints, docstrings, reproducible RNG seeding, packaging,
-  linting, and tests so it's ready to push to GitHub.
-
 ## Installation
 
 ```bash
