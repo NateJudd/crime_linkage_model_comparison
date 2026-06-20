@@ -14,9 +14,7 @@ def main() -> None:
     features = simulate_features(n, p, random_state=random_state)
     y = flatten_linkages(linkages)
 
-    glm_metrics, rf_metrics, significance = compare_models(
-        y, features, random_state=random_state
-    )
+    glm_metrics, rf_metrics, significance = compare_models(y, features, random_state=random_state)
 
     print("GLM metrics:", glm_metrics)
     print("Random forest metrics:", rf_metrics)

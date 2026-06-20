@@ -144,9 +144,7 @@ def main() -> None:
         (axes[1], "Random Forest", y_pred_rf),
     ):
         cm = confusion_matrix(y_test, y_pred)
-        ConfusionMatrixDisplay(cm, display_labels=["no link", "link"]).plot(
-            ax=ax, colorbar=False
-        )
+        ConfusionMatrixDisplay(cm, display_labels=["no link", "link"]).plot(ax=ax, colorbar=False)
         ax.set_title(label)
     fig.tight_layout()
     fig.savefig(FIGURES_DIR / "confusion_matrices.png", dpi=150)

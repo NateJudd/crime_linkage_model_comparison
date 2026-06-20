@@ -40,9 +40,7 @@ class McNemarResult:
     p_value: float
 
 
-def mcnemar_test(
-    y_true: np.ndarray, y_pred_a: np.ndarray, y_pred_b: np.ndarray
-) -> McNemarResult:
+def mcnemar_test(y_true: np.ndarray, y_pred_a: np.ndarray, y_pred_b: np.ndarray) -> McNemarResult:
     """Run McNemar's exact test to compare two classifiers on the same test set.
 
     A small p-value suggests the two models' disagreements are lopsided
@@ -60,6 +58,4 @@ def mcnemar_test(
         return McNemarResult(n01=n01, n10=n10, statistic=0.0, p_value=1.0)
 
     result = binomtest(min(n01, n10), n, p=0.5)
-    return McNemarResult(
-        n01=n01, n10=n10, statistic=float(min(n01, n10)), p_value=result.pvalue
-    )
+    return McNemarResult(n01=n01, n10=n10, statistic=float(min(n01, n10)), p_value=result.pvalue)

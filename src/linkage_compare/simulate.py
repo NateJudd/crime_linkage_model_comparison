@@ -12,9 +12,7 @@ from __future__ import annotations
 import numpy as np
 
 
-def simulate_linkages(
-    n: int, p_link: float = 0.5, random_state: int | None = None
-) -> np.ndarray:
+def simulate_linkages(n: int, p_link: float = 0.5, random_state: int | None = None) -> np.ndarray:
     """Simulate an n x n binary matrix of pairwise linkages.
 
     Parameters
