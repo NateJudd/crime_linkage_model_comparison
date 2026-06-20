@@ -57,10 +57,9 @@ examples/output/
 ```
 
 Re-running the script overwrites these files in place. With the default
-purely-random simulation both models score around 0.5 on every metric —
-that's expected, since there's no real signal between the simulated
-features and labels. Swap in real features/labels (or adjust `p_link`)
-to see the comparison do something more interesting.
+purely-random simulation both models score around 0.5 on every metric (as
+expected). Swap in real features/labels (or adjust `p_link`)
+to extend the comparison.
 
 ## Project structure
 
@@ -86,10 +85,3 @@ pre-commit install    # optional: run lint/format checks on every commit
 
 CI (`.github/workflows/ci.yml`) runs lint, format checks, and tests on
 Python 3.10–3.12 for every push and pull request.
-
-## Notes / things to double check before relying on this
-
-- `p_link` and feature `prob` both default to 0.5 in the simulators — these
-  are placeholders, not estimated from real data.
-- The LICENSE is MIT with a placeholder name; update it (or swap licenses)
-  before publishing.
