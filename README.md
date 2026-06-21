@@ -4,6 +4,9 @@ Simulate synthetic record-linkage data and compare a logistic regression
 (GLM) baseline against a random forest classifier in terms of a suite of
 model summary metrics (as well as a statistical hypothesis test).
 
+Inspired by, but independent of, my preprint on statistical crime linkage
+(https://arxiv.org/abs/2510.03730).
+
 ## Installation
 
 ```bash
